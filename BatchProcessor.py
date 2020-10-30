@@ -28,7 +28,7 @@ class BatchProcessor(implements(IBatchProcessor)):
     annotationType: AnnotationType,
     batchSize: int,
     configFile: str,
-    outputFile: str):
+    outputFile: str) -> None:
         numberOfBatches = math.ceil(len(annotatedImages)/batchSize)
         for batch in range(numberOfBatches):
             print("Processing batch " +  str(batch + 1) + " out of " + str(numberOfBatches))

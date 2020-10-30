@@ -10,6 +10,6 @@ class IBatchProcessor(Interface):
     annotationType: AnnotationType,
     batchSize: int,
     configFile: str,
-    outputFile: str):
+    outputFile: str) -> None:
         pass
         
