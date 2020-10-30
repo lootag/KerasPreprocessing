@@ -30,10 +30,10 @@ class Program:
     def main(self):
         parser = argparse.ArgumentParser(description="A small CLI app to create keras ready annotated images")
         parser.add_argument('--batch_size', dest="batchSize", type=int, default=10)
-        parser.add_argument('--annotation_type', dest="annotationType", type=int, default=0)
+        parser.add_argument('--annotation_type', dest="annotationType", type=str, default="PASCAL_VOC")
         args = parser.parse_args()
         batchSize = args.batchSize
-        annotationType = AnnotationType(args.annotationType)
+        annotationType = AnnotationType[args.annotationType]
         configFile = "classes.json"
         outputFile = "Output/output.h5"
         self.__deleteOutputIfItExists(outputFile)
