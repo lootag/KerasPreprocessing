@@ -29,8 +29,8 @@ class Program:
         self.__validator = validator
     def main(self):
         parser = argparse.ArgumentParser(description="A small CLI app to create keras ready annotated images")
-        parser.add_argument('--batch_size', dest=batchSize, type=int, default=10)
-        parser.add_argument('--annotation_type', dest=annotationType, type=int, default=0)
+        parser.add_argument('--batch_size', dest="batchSize", type=int, default=10)
+        parser.add_argument('--annotation_type', dest="annotationType", type=int, default=0)
         args = parser.parse_args()
         batchSize = args.batchSize
         annotationType = AnnotationType(args.annotationType)
