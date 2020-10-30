@@ -1,0 +1,9 @@
+h5py==2.10.0
+injector==0.18.4
+numpy==1.19.2
+opencv-contrib-python==4.4.0.44
+python-interface==1.6.0
+scipy==1.5.3
+six==1.15.0
+typing-extensions==3.7.4.3
+untangle==1.1.1
