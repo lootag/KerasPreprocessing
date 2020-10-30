@@ -1,0 +1,14 @@
+Input --> Images, Annotations. 
+Output --> 2 numpy arrays. X => our features (image pixels); Y => bounding-boxed + classes. 
+
+1 program (executable) => turns images and annotations into a memory efficient data source.
+1 library => exposes a class. This class is a data generator which allows you to load your data into memory in little chunks.
+                -------------------------------------------------------------------------
+
+1) This program
+
+Interfaces:
+    IImageReader => exposes public Read method. Takes an image and turns it into a numpy array.
+    IAnnotationReader => exposes public Read method. Takes an annotation and deserializes it into an Annotation class.
+    IAnnotationTansformer => exposes a public Transform method. Takes an instance of the Annotation class and turns it into a numpy array. 
+    IWriter => exposes a public Write method. Takes a numpy array and writes it to the hard drive.
