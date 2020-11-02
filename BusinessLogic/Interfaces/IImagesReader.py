@@ -3,5 +3,5 @@ from typing import List
 
 class IImagesReader(Interface):
     def Read(self,
-    paths: List[str]) -> List[List[float]]:
+    paths: List[str]) -> List:
         pass

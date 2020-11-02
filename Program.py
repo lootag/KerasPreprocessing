@@ -28,6 +28,7 @@ class Program:
         self.__batchProcessor = batchProcessor
         self.__validator = validator
     def main(self):
+        self.__makeOutputDirectoryIfIDoesntExist()
         parser = argparse.ArgumentParser(description="A small CLI app to create keras ready annotated images")
         parser.add_argument('--batch_size', dest="batchSize", type=int, default=10)
         parser.add_argument('--annotation_type', dest="annotationType", type=str, default="PASCAL_VOC")
@@ -67,6 +68,9 @@ class Program:
         if os.path.exists(outputFile):
             os.remove(outputFile)
     
+    def __makeOutputDirectoryIfIDoesntExist(self):
+        if not os.path.exists("Output"):
+            os.mkdir("Output")
 def resolveDependencies(binder: Binder):
     binder.bind(IImagesReader, to=ImagesReader)
     binder.bind(IAnnotationsReadersFactory, to=AnnotationsReadersFactory)

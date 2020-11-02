@@ -6,3 +6,4 @@ class IAnnotationsReader(Interface):
     def Read(self,
     paths: List[str]) -> List[Annotation]:
         pass
+
